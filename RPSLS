@@ -1,11 +1,10 @@
 # Rock-paper-scissors-lizard-Spock template
-# This is a version of Rock, Paper Scissors
 import random
 
 # The key idea of this program is to equate the strings
 # "rock", "paper", "scissors", "lizard", "Spock" to numbers
 # as follows:
-
+#
 # 0 - rock
 # 1 - Spock
 # 2 - paper
@@ -13,19 +12,36 @@ import random
 # 4 - scissors
 
 # Dict converst name to number
-rpsls_dict = {"rock" : 0, "Spock" : 1, "paper" : 2, "lizard": 3
-              , "scissors" : 4}
 
 # Helper function name to number
 def name_to_number(name):
-    if name in rpsls_dict.keys():
-        return rpsls_dict[name]
+    if name == "rock":
+        return 0
+    elif name == "Spock":
+        return 1
+    elif name == "paper":
+        return 2
+    elif name == "lizard":
+        return 3
+    elif name == "scissors":
+        return 4
     else:
         raise NameError("Oops!  That was not a valid input.  Try again...")
 
 # Helper function number to name        
 def number_to_name(number):
-    return rpsls_dict.keys()[number]
+    if number == 0:
+        return "rock"
+    elif number == 1: 
+        return "Spock"
+    elif number == 2:
+        return "paper"
+    elif number == 3:
+        return "lizard"
+    elif number == 4: 
+        return "scissors"
+    else: 
+        raise NameError("Oops. That isn't a valid number.")
 
 # Function takes input of RPSLS and plays against computer
 def rpsls(player_choice):
