@@ -1,6 +1,7 @@
 # Guess the Number
 # input will come from buttons and an input field
-# all output for the game will be printed in the console
+# Should be played in codeskulptor
+# http://www.codeskulptor.org/#user40_vnwAQVbIGY_2.py
 
 import simplegui, random
 guesses_left = 7
