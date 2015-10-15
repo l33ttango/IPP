@@ -60,8 +60,5 @@ frame.add_button("Range is [0, 1000)", range1000, 125)
 # register event handlers for control elements and start frame
 
 
-# call new_game 
+# call new_game
 new_game()
-
-
-# always remember to check your completed program against the grading rubric
