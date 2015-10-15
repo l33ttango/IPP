@@ -1,0 +1,48 @@
+# Rock-paper-scissors-lizard-Spock template
+# This is a version of Rock, Paper Scissors
+import random
+
+# The key idea of this program is to equate the strings
+# "rock", "paper", "scissors", "lizard", "Spock" to numbers
+# as follows:
+
+# 0 - rock
+# 1 - Spock
+# 2 - paper
+# 3 - lizard
+# 4 - scissors
+
+# Dict converst name to number
+rpsls_dict = {"rock" : 0, "Spock" : 1, "paper" : 2, "lizard": 3
+              , "scissors" : 4}
+
+# Helper function name to number
+def name_to_number(name):
+    if name in rpsls_dict.keys():
+        return rpsls_dict[name]
+    else:
+        raise NameError("Oops!  That was not a valid input.  Try again...")
+
+# Helper function number to name        
+def number_to_name(number):
+    return rpsls_dict.keys()[number]
+
+# Function takes input of RPSLS and plays against computer
+def rpsls(player_choice):
+    player_number = name_to_number(player_choice)
+    computer_number = random.randrange(0, 5)
+    computer_choice = number_to_name(computer_number)
+    if player_number == computer_number:
+        print """Player chooses %s. \nComputer chooses %s. \nTIE! \n""" %(player_choice, computer_choice)
+
+    elif (player_number - computer_number) % 5 <= 2:
+        print """Player chooses %s. \nComputer chooses %s. \nPlayer wins! \n """ %(player_choice, computer_choice)
+    else:
+        print """Player chooses %s. \nComputer chooses %s. \nComputer wins! \n""" %(player_choice, computer_choice)
+
+# Test the functions        
+rpsls("rock")
+rpsls("Spock")
+rpsls("paper")
+rpsls("lizard")
+rpsls("scissors")
